@@ -1,0 +1,257 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+
+/* Global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Enable scrolling for the whole page */
+}
+
+body {
+    color: #998861;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0e0e0e;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensure body is column layout */
+    align-items: center;
+    min-height: 100vh; /* Ensure body covers entire viewport height */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('kappagram.png'); /* Path to your overlay image */
+    opacity: 1; /* Adjust opacity as needed */
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    display: block; /* Ensure they are block-level elements */
+}
+
+h2, p {
+    display: block; /* Ensure they are block-level elements */
+}
+
+a {
+    color: #998861;
+}
+
+.container {
+    padding: 20px;
+    padding-top: 80px; /* Adjusted to ensure content starts below the top bar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure container takes full width */
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center align container */
+}
+
+.login-container {
+    max-width: 420px;
+    width: 100%;
+    padding: 20px;
+    background-color: #171612;
+    box-shadow: 0 0 10px rgba(153, 134, 97, 0.3);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #998861;
+    border-radius: 5px;
+    background-color: #0e0e0e;
+    color: #babab9;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #998861;
+    box-shadow: 0 0 5px #998861;
+}
+
+.login-container button {
+    padding: 10px;
+    background-color: #998861;
+    color: #0e0e0e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #6c976f;
+}
+
+#loginMessage,
+#signupMessage {
+    color: #998861;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Top bar styles */
+.top-bar {
+    width: 100%;
+    background-color: #0c0c09;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(153, 134, 97, 0.2);
+}
+
+#logoutButton {
+    background-color: #998861;
+    color: #000;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #d30011;
+    color: #FFF;
+}
+
+/* Task section styles */
+.task-section {
+    margin-top: 10px; /* Adjust this value as needed */
+    padding: 20px;
+    background-color: #171612;
+    border-radius: 15px;
+    max-width: 720px;
+    width: 100%; /* Ensure task section takes full width */
+    box-sizing: border-box; /* Ensure padding doesn't exceed max-width */
+    box-shadow: 0 0 10px rgba(153, 134, 97, 0.3);
+    opacity: 0.8;
+}
+
+.task-section h2 {
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width as needed */
+    gap: 10px; /* Adjust gap between grid items */
+    justify-items: center; /* Center items horizontally within each grid cell */
+    align-items: center; /* Center items vertically within each grid cell */
+}
+
+.task-button {
+    background-color: #58bc14;
+    color: #111111;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px 3px;
+}
+
+.task-button.completed {
+    background-color: #d30011;
+    color: #FFF;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+}
+
+.task-button:hover {
+    background-color: #9ff304;
+}
+
+.task-button.completed:hover {
+    background-color: #fa0014;
+}
+
+.footer {
+    text-align: center;
+    align-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #0c0c09;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%; /* Ensure task section takes full width */
+    box-sizing: border-box; /* Ensure padding doesn't exceed max-width */
+    box-shadow: 0 0 10px rgba(153, 134, 97, 0.1);
+    opacity: 0.8;
+}
+
+.paypal {
+    max-width: 200px;
+}
+
+
+/* WebKit (Chrome, Safari, Opera) */
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+    background-color: transparent; /* transparent background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #998861; /* color of the scrollbar handle */
+    border-radius: 5px; /* roundness of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7d6f4f; /* color of the scrollbar handle on hover */
+}
+
+/* Firefox custom scrollbar with color */
+
+/* Track and Handle */
+html {
+    scrollbar-width: thin; /* "auto" or "thin" for Firefox */
+    scrollbar-color: #998861 transparent; /* color of the scrollbar handle and track */
+}
+
+/* Handle on hover */
+html:hover {
+    scrollbar-color: #7d6f4f transparent; /* color of the scrollbar handle on hover */
+}
+
